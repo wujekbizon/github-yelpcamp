@@ -1,0 +1,130 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card shadow my-4">
+      <img
+        src="https://res.cloudinary.com/dpnig0xon/image/upload/v1649671736/YelpCamp/ieheq8wogkxdd2lqkoay.avif"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">Edit Campground</h5>
+        <form
+          method="POST"
+          action="/campgrounds/<%=campground._id%>?_override=PUT"
+          class="needs-validation"
+          novalidate
+          enctype="multipart/form-data"
+        >
+          <div class="form-outline mb-4 mt-4">
+            <input
+              class="form-control form-control-lg bg-light"
+              type="text"
+              name="campground[title]"
+              id="title"
+              value="<%=campground.title%>"
+              required
+            />
+            <label class="form-label" for="title">Title</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter title</div>
+          </div>
+          <div class="form-outline mb-4">
+            <input
+              class="form-control form-control-lg bg-light"
+              type="text"
+              name="campground[location]"
+              id="location"
+              value="<%=campground.location%>"
+              required
+            />
+            <label class="form-label" for="location">Location</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter location</div>
+          </div>
+          <div class="input-group flex-nowrap mb-4">
+            <span class="input-group-text" id="price-label">$</span>
+            <div class="form-outline flex-grow-1">
+              <input
+                type="text"
+                class="form-control form-control-lg bg-light rounded-0 rounded-end"
+                id="price"
+                value="<%=campground.price%>"
+                name="campground[price]"
+                aria-describedby="price-label"
+                required
+              />
+              <label class="form-label" for="price">Price/night</label>
+              <div class="position-absolute top-100 end-0 valid-tooltip">
+                Looks good!
+              </div>
+              <div class="invalid-tooltip">Please enter price</div>
+            </div>
+          </div>
+          <div class="form-outline mb-4">
+            <textarea
+              class="form-control bg-light bg-gradient"
+              name="campground[description]"
+              id="description"
+              required
+            >
+  <%=campground.description%></textarea
+            >
+            <label class="form-label" for="description">Description</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter description</div>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input
+              class="form-control file"
+              type="file"
+              name="image"
+              id="formFileMultiple"
+              multiple
+            />
+            <label class="form-label" for="formFileMultiple"
+              >Choose Files</label
+            >
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please choose image</div>
+          </div>
+          <div class="row pt-3 bg-light shadow-1-strong rounded-2">
+            <% campground.images.forEach(function(img, i) {%>
+            <div class="col-lg-6 col-md-10 mb-4 mb-lg-4">
+              <img
+                src="<%=img.thumbnail%>"
+                class="w-100 h-100 shadow-1-strong rounded-2"
+                alt=""
+              />
+              <div class="form-check-inline">
+                <input
+                  type="checkbox"
+                  id="image-<%=i%>"
+                  name="deleteImages[]"
+                  value="<%=img.filename%>"
+                />
+              </div>
+              <label class="text-dark" for="image-<%=i%>">Remove Image</label>
+            </div>
+            <%})%>
+          </div>
+          <button class="btn btn-success btn-block text-light my-3">
+            Update Campground
+          </button>
+        </form>
+        <a class="text-dark" href="/campgrounds/<%=campground._id%>"
+          >Back to Campground</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

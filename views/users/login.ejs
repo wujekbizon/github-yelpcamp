@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+    <div class="card shadow mt-4">
+      <img
+        src="https://res.cloudinary.com/dpnig0xon/image/upload/v1649602771/YelpCamp/zwmidprsx0652oxgx3wm.avif"
+        class="card-img-top"
+        alt=""
+      />
+      <div class="card-body">
+        <h5 class="card-title">Login</h5>
+        <form class="needs-validation" method="POST" action="/login" novalidate>
+          <div class="form-outline mb-4 mt-4">
+            <input
+              class="form-control form-control"
+              type="text"
+              name="username"
+              id="username"
+              autofocus
+              required
+            />
+            <label class="form-label" for="username">Username</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter username</div>
+          </div>
+          <div class="form-outline mb-4">
+            <input
+              class="form-control form-control"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
+            <label class="form-label" for="password">Password</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter password</div>
+          </div>
+          <button class="btn btn-sm btn-block btn-info">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

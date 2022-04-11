@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YelpCamp</title>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="/stylesheets/mdb/mdb.min.css" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <%- include('../partials/navbar') %>
+    <main class="container-fluid px-0">
+      <%- include('../partials/flash')%> <%- body%>
+    </main>
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="/javascripts/mdb/mdb.min.js"></script>
+    <script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+    <script src="/javascripts/validateForms.js"></script>
+  </body>
+</html>

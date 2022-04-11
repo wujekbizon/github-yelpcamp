@@ -1,0 +1,104 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card shadow mt-4 mb-3">
+      <img
+        src="https://res.cloudinary.com/dpnig0xon/image/upload/v1649671736/YelpCamp/ieheq8wogkxdd2lqkoay.avif"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">New Campground</h5>
+        <form
+          method="Post"
+          action="/campgrounds"
+          class="needs-validation"
+          novalidate
+          enctype="multipart/form-data"
+        >
+          <div class="form-outline mb-4 mt-4">
+            <input
+              class="form-control form-control"
+              type="text"
+              name="campground[title]"
+              id="title"
+              required
+            />
+            <label class="form-label" for="title">Title</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter title</div>
+          </div>
+          <div class="form-outline mb-4">
+            <input
+              class="form-control form-control bg-light"
+              type="text"
+              name="campground[location]"
+              id="location"
+              required
+            />
+            <label class="form-label" for="location">Location</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter location</div>
+          </div>
+          <div class="input-group flex-nowrap mb-4">
+            <span class="input-group-text" id="price-label">$</span>
+            <div class="form-outline flex-grow-1">
+              <input
+                type="text"
+                class="form-control form-control bg-light rounded-0 rounded-end"
+                id="price"
+                name="campground[price]"
+                aria-describedby="price-label"
+                required
+              />
+              <label class="form-label" for="price">Price/night</label>
+              <div class="position-absolute top-100 end-0 valid-tooltip">
+                Looks good!
+              </div>
+              <div class="invalid-tooltip">Please enter price</div>
+            </div>
+          </div>
+          <div class="form-outline mb-4">
+            <textarea
+              class="form-control bg-light bg-gradient"
+              name="campground[description]"
+              id="description"
+              required
+            ></textarea>
+            <label class="form-label" for="description">Description</label>
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please enter description</div>
+          </div>
+          <div class="form-outline mb-4">
+            <input
+              class="form-control"
+              type="file"
+              name="image"
+              id="formFileMultiple"
+              multiple
+              required
+            />
+            <label class="form-label" for="formFileMultiple"
+              >Choose Files</label
+            >
+            <div class="position-absolute top-100 end-0 valid-tooltip">
+              Looks good!
+            </div>
+            <div class="invalid-tooltip">Please choose image</div>
+          </div>
+          <button class="btn btn-success btn-block text-light mb-3">
+            Add Campground
+          </button>
+        </form>
+        <a class="text-danger" href="/campgrounds">All Campgrounds</a>
+      </div>
+    </div>
+  </div>
+</div>
