@@ -3,8 +3,8 @@ mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
   container: 'cluster-map',
   style: 'mapbox://styles/mapbox/light-v10',
-  center: [-103.5917, 40.6699],
-  zoom: 3,
+  center: [0, 45],
+  zoom: 2,
 });
 
 map.addControl(new mapboxgl.FullscreenControl());
@@ -13,26 +13,26 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 // Load custom data to supplement the search results.
 const customData = {
   features: [
-    // {
-    //   type: 'Feature',
-    //   properties: {
-    //     title: 'Grizzly Bay best campground',
-    //   },
-    //   geometry: {
-    //     coordinates: [-118.1937395, 33.7700504],
-    //     type: 'Point',
-    //   },
-    // },
-    // {
-    //   type: 'Feature',
-    //   properties: {
-    //     title: 'Tumbling Creekside best campground',
-    //   },
-    //   geometry: {
-    //     coordinates: [-74.0323626, 40.7439905],
-    //     type: 'Point',
-    //   },
-    // },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Sunshine River best campground',
+      },
+      geometry: {
+        coordinates: [19.95, 50.06667],
+        type: 'Point',
+      },
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Babia Góra Camp best campground',
+      },
+      geometry: {
+        coordinates: [19.56667, 49.66667],
+        type: 'Point',
+      },
+    },
     // {
     //   type: 'Feature',
     //   properties: {
