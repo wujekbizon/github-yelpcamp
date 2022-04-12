@@ -13,36 +13,36 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 // Load custom data to supplement the search results.
 const customData = {
   features: [
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Grizzly Bay best campground',
-      },
-      geometry: {
-        coordinates: [-118.1937395, 33.7700504],
-        type: 'Point',
-      },
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Tumbling Creekside best campground',
-      },
-      geometry: {
-        coordinates: [-74.0323626, 40.7439905],
-        type: 'Point',
-      },
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Silent Camp best campground',
-      },
-      geometry: {
-        coordinates: [-80.8075537, 28.6122187],
-        type: 'Point',
-      },
-    },
+    // {
+    //   type: 'Feature',
+    //   properties: {
+    //     title: 'Grizzly Bay best campground',
+    //   },
+    //   geometry: {
+    //     coordinates: [-118.1937395, 33.7700504],
+    //     type: 'Point',
+    //   },
+    // },
+    // {
+    //   type: 'Feature',
+    //   properties: {
+    //     title: 'Tumbling Creekside best campground',
+    //   },
+    //   geometry: {
+    //     coordinates: [-74.0323626, 40.7439905],
+    //     type: 'Point',
+    //   },
+    // },
+    // {
+    //   type: 'Feature',
+    //   properties: {
+    //     title: 'Silent Camp best campground',
+    //   },
+    //   geometry: {
+    //     coordinates: [-80.8075537, 28.6122187],
+    //     type: 'Point',
+    //   },
+    // },
   ],
   type: 'FeatureCollection',
 };
@@ -53,7 +53,7 @@ function forwardGeocoder(query) {
     // Handle queries with different capitalization
     // than the source data by calling toLowerCase().
     if (feature.properties.title.toLowerCase().includes(query.toLowerCase())) {
-      // Add a tree emoji as a prefix for custom
+      // Add a campground emoji as a prefix for custom
       // data results using carmen geojson format:
       // https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
       feature['place_name'] = `🏕️ ${feature.properties.title}`;

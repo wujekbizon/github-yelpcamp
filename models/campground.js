@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Review = require('./review');
 
-// https://res.cloudinary.com/dpnig0xon/image/upload/v1649592029/YelpCamp/viojoikwfd9cq5gfvn7c.avif
-
 const ImageSchema = new Schema({
   url: String,
   filename: String,
