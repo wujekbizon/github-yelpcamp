@@ -5,8 +5,20 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3 my-3">
-      <div id="search" class="text-center mt-3">
-        <h3>All Campgrounds</h3>
+      <div class="mt-3 mb-4">
+        <h3>Search And View Campgrounds</h3>
+      </div>
+      <div class="col-md-10 my-3">
+        <% if(noMatch !== null) {%>
+        <h3><%=noMatch%></h3>
+        <form method="GET" action="/campgrounds" class="form-inline">
+          <div class="form-outline">
+            <input id="search" class="form-control" type="text" name="search" />
+            <label class="form-label" for="search">Campground search</label>
+          </div>
+          <button class="btn btn-block btn-sm btn-warning">Search</button>
+        </form>
+        <% } %>
       </div>
     </div>
   </div>
